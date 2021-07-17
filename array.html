@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    
+</head>
+<body>
+    <label for="enter">Enter the numbers:</label>
+    <input type="text" id="array" name="arr"><br>
+    <button id="bt">Submit</button>
+    
+    <p id="arr"></p>
+    <script>
+        var res=[];
+        
+        var z=document.getElementById("bt");
+        z.addEventListener("click", myFunction);
+        
+        function myFunction(){
+        var num=[];
+        var str=[];
+        var a="The array is: ";
+        var x=document.getElementById("array").value;
+        
+        res.push(x);
+        for(var i=0;i<res.length;i++)
+        {
+            if(!isNaN(res[i]))
+            {
+                
+                num.push(res[i]);
+                num.sort();
+              
+            }
+            else{
+                str.push(res[i]);
+                str.sort();
+            }
+        }
+        document.getElementById("arr").innerHTML=a+res+"<br> number array: "+num+"<br> string array: "+str;
+    }
+        
+    </script>
+</body>
+</html>

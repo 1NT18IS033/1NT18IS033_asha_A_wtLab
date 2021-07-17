@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Array</title>
+</head>
+<body>
+     <div class="form">
+        <label for="guessField">Enter a number: </label>
+        <input type = "text" id = "Field" class = "Field">
+        <input type = "submit" value = "Submit " 
+               class = "Submit" id = "submit">
+    </div> 
+    <p id="arr"></p>
+    <script>
+        var b=[];
+        document.getElementById("submit").onclick=function(){
+        var a=document.getElementById("Field").value;
+        
+        b.push(a);
+        document.getElementById("arr").innerHTML=b;
+        }
+        // for(let i=0;i<b;i++)
+        // {
+        //     document.write("array["+i+"] = "+a[i]);
+        //     document.write("<br>")
+        // }
+    </script>
+</body>
+</html>
