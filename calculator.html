@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        button{
+            background-color: aqua;
+            border-radius: 50%;
+            width:50%;
+        }
+        table{
+            background-color:brown;
+        }
+    </style>
+</head>
+<body>
+    <center><h1 style="font-style: italic;">Calculator</h1></center>
+    <center><table style="border:2px solid black;width: 300px;height: 300px;">
+    <div class="key" >
+        <tr style="border:1px solid black;">
+            <td colspan="3" style="border:1px solid black;"><input type="text"  id="edu" style="font-size: 30px;"></td>
+            <td style="border:1px solid black;"><button value="c" onclick="clr()" style="font-size: 30px;cursor: pointer;margin: 5px 20px;">C</button></td>
+        </tr>
+        <tr style="border:1px solid black; ">
+            <td style="border:1px solid black;"><button value="7" onclick="dis('7')" style="font-size: 30px;cursor: pointer;margin: 5px 40px;">7</button></td>
+            <td style="border:1px solid black;"><button value="8" onclick="dis('8')" style="font-size: 30px;cursor: pointer;margin: 5px 40px;">8</button></td>
+            <td style="border:1px solid black;"><button value="9" onclick="dis('9')" style="font-size: 30px;cursor: pointer;margin: 5px 40px;">9</button></td>
+            <td style="border:1px solid black;"><button value="+" onclick="dis('+')" style="font-size: 30px;cursor: pointer;margin: 5px 20px;">+</button></td>    
+        </tr>
+        <tr style="border:1px solid black;">
+            <td style="border:1px solid black;"><button value="4" onclick="dis('4')" style="font-size: 30px;cursor: pointer;margin: 5px 40px;">4</button></td>
+            <td style="border:1px solid black;"><button value="5" onclick="dis('5')" style="font-size: 30px;cursor: pointer;margin: 5px 40px;">5</button></td>
+            <td style="border:1px solid black;"><button value="6" onclick="dis('6')" style="font-size: 30px;cursor: pointer;margin: 5px 40px;">6</button></td>
+            <td style="border:1px solid black;"><button value="-" onclick="dis('-')"style="font-size: 30px;cursor: pointer;margin: 5px 20px;">-</button></td>    
+        </tr>
+        <tr style="border:1px solid black;">
+            <td style="border:1px solid black;"><button value="1" onclick="dis('1')" style="font-size: 30px;cursor: pointer;margin: 5px 40px;">1</button></td>
+            <td style="border:1px solid black;"><button value="2" onclick="dis('2')" style="font-size: 30px;cursor: pointer;margin: 5px 40px;">2</button></td>
+            <td style="border:1px solid black;"><button value="3" onclick="dis('3')" style="font-size: 30px;cursor: pointer;margin: 5px 40px;">3</button></td>
+            <td style="border:1px solid black;"><button value="*" onclick="dis('*')" style="font-size: 30px;cursor: pointer;margin: 5px 20px;">*</button></td>    
+        </tr>
+        <tr style="border:1px solid black;">
+            <td style="border:1px solid black;"><button value="." onclick="dis('.')" style="font-size: 30px;cursor: pointer;margin: 5px 40px;">.</button></td>
+            <td style="border:1px solid black;"><button value="0" onclick="dis('0')" style="font-size: 30px;cursor: pointer;margin: 5px 40px;">0</button></td>
+            <td style="border:1px solid black;"><button value="=" onclick="solve()" style="font-size: 30px;cursor: pointer;margin: 5px 40px;">=</button></td>
+            <td style="border:1px solid black;"><button value="/" onclick="dis('/')" style="font-size: 30px;cursor: pointer;margin: 5px 20px;">/</button></td>    
+        </tr>
+        
+    </div>
+    
+</table><br>
+
+   
+
+<script>
+    function dis(val)
+{
+    
+document.getElementById("edu").value+=val
+}
+    function solve()
+{
+let x = document.getElementById("edu").value
+let y = eval(x)
+console.log(y)
+document.getElementById("edu").value = x+"="+y
+}
+function clr(){
+    document.getElementById("edu").value = " "
+}
+</script>
+</body>
+</html>
