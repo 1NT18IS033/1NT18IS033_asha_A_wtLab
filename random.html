@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <tile>Check</tile>
+        <script>
+            var a=Math.floor((Math.random() * 10) + 1);
+            function myFunc()
+            {
+               
+               
+                var b=document.getElementById("num").value;
+                if(a==b)
+                {
+                    alert("Numbers are same\n random number is: "+a);
+                }
+                else{
+                    alert("Not same\n random number is: "+a);
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        <p>enter the number 1 to 10</p>
+        <input type="number" id="num" name="number">
+        <button type="button"  onclick="myFunc()">Check</button>
+        
+        
+    </body>
+</html>

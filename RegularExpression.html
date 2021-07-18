@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Regular Expressions</title>
+        <style>
+        button{
+            background-color:red;
+            border-radius: 20%;
+            font-size: x-large;
+            cursor: pointer;
+        }
+       
+    </style>
+    </head>
+<body>
+    <center>
+    
+    <div class="c1" style="border: solid black; background-color: lightsteelblue;"><p style="font-size: x-large;">1) Array is :['goal','new','user','sit','eat','dinner']</p><h3>Array elements which do not contain 'e' :</h3>
+        <p id="p1" style="font-size: x-large;font-weight: bold; "> </p>
+        <button class="b1" onclick="fun1();">Click here!!</button>
+        </div>
+    
+    <div class="c2" style="border: solid black; background-color: lightgreen;" ><p style="font-size: x-large;">2) Array is :['goal','new','user','sit','eat','dinner']</p><h3>Array elements which contains both 'e' and 'n' : </h3>
+        <p id="p2" style="font-size: x-large; font-weight: bold;"> </p>    
+        <button class="b2" onclick="fun2();">Click here!!</button>
+            </div>
+    
+    <div class="c3" style="border: solid black; background-color: lightsteelblue;"><p style="font-size: x-large;">3) Array is : ['lovely','1\ndentist','2 lonely','eden','fly\n','dent'] </p><h3>Array elements start with 'den' or end with 'ly' </h3>
+        <p id="p3" style="font-size: x-large;font-weight: bold;"> </p>        
+        <button class="b3" onclick="fun3();">Click here!!</button>
+                </div>
+   
+    <div class="c4" style="border: solid black; background-color: lightgreen;"  > <p style="font-size: x-large;">4) Array is :  ['handed','hand','handy','unhanded','handle','hand-2'] </p><h3>After repalcing 'hand' with 'X' for all words start with 'hand' and followed by atleast one character </h3>
+        <p id="p4" style="font-size: x-large;font-weight: bold;"> </p>        
+        <button class="b4" onclick="fun4();">Click here!!</button>
+                </div>
+    
+    <div class="c5" style="border: solid black; background-color: lightsteelblue;"><p style="font-size: x-large;">5) String is : "refused reed redo received" </p><h3>After repalcing all occurence of 'removed' or 'reed' or 'received' or 'refused' with 'X' </h3>
+        <p id="p5" style="font-size: x-large;font-weight: bold;"> </p>       
+        <button class="b5" onclick="fun5();">Click here!!</button>
+                </div>
+    
+    <div class="c6" style="border: solid black; background-color: lightgreen;"  ><p style="font-size: x-large;">6) String :"th\\er\\e ar\\e common asp\\ects among th\\e atl\\ernations" </p><h3>After repalcing all occurence of '\e' with 'e' </h3>
+        <p id="p6" style="font-size: x-large;font-weight: bold;"> </p>        
+        <button class="b6" onclick="fun6();">Click here!!</button>
+                </div>
+    
+
+
+<script>
+
+function fun1() {
+    var arr = ['goal','new','user','sit','eat','dinner'];
+    var patt=new RegExp('e');
+    const res=arr.filter(c =>!patt.test(c));
+    document.getElementById("p1").innerHTML="[ "+res+" ]";
+}
+
+function fun2() {
+    var arr = ['goal','new','user','sit','eat','dinner'];
+    var patt1=new RegExp('e');
+    var patt2=new RegExp('n');
+    const res1=arr.filter(item =>patt1.test(item)&&patt2.test(item));
+    document.getElementById("p2").innerHTML="[ "+res1+" ]";
+}
+function fun3() {
+    var arr = ['lovely','1\ndentist','2 lonely','eden','fly\n','dent'];
+    var patt1=new RegExp('^den');
+    var patt2=new RegExp('ly$')
+    const res2=arr.filter(item =>patt1.test(item)||patt2.test(item));
+    document.getElementById("p3").innerHTML="[ "+res2+" ]";
+}
+function fun4() {
+    var arr = ['handed','hand','handy','unhanded','handle','hand-2'];
+    var patt=new RegExp('\\bhand\\B');
+    const res3=arr.map(item =>item.replace(patt,'X'));
+    document.getElementById("p4").innerHTML="[ "+res3+" ]";
+}
+function fun5() {
+    var str = "refused reed redo received";
+    let res4=str.replace(/removed|reed|received|refused/g,'X');
+    document.getElementById("p5").innerHTML="'"+res4+"'";
+}
+function fun6() {
+    var str = "th\\er\\e ar\\e common asp\\ects among th\\e atl\\ernations";
+    let res5=str.replace(/\\e/g,'e');
+    document.getElementById("p6").innerHTML="'"+res5+"'";
+}
+
+
+</script>
+</center>
+</body>
+</html>

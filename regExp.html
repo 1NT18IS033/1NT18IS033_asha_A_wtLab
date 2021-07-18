@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Click the button to give the array elements</p>
+    <button onclick="myFun()">here!!</button>
+    <p id="de" style="font-size: xx-large"></p>
+    <p id="a" style="font-size: x-large"></p>
+    <p id="b" style="font-size: xx-large"></p>
+    <p id="c" style="font-size: x-large"></p>
+    <script>
+        let arr=[];
+        let s=5
+        function myFun(){
+        for(var i=0;i<s;i++){
+            arr[i]=prompt('Enter Element '+(i+1));
+
+        }
+        let str=""
+        str=prompt('Enter the string');
+        document.getElementById("de").innerHTML="The array is : "+arr;
+        let res=[];
+        let pattern=new RegExp('e');
+        res=arr.filter(check=>!pattern.test(check));
+        let patt1=new RegExp('n');
+        res1=arr.filter(check=>pattern.test(check) && patt1.test(check));
+        let patt2=new RegExp('^den');
+        let patt3=new RegExp('ly$')
+        res2=arr.filter(check=>patt2.test(check) || patt3.test(check));
+        let patt4=new RegExp('\\bhand\\B');
+        res3=arr.map(c=>c.replace(patt4,'X'));
+        document.getElementById("a").innerHTML="Array elements which do not contain 'e' : "+res+"<br><br>Array elements which contains 'e' and 'n' : "+res1+"<br><br>Array elements which starts with 'den' or end with 'ly' : "+res2+"<br><br>Array elements after replacing  'hand' with 'X' for the words  starting with hand followed by atleast one character : "+res3; 
+        document.getElementById("b").innerHTML="The String is : "+str;
+        let res4="";
+        res4=str.replace(/removed|reed|received|refused/g,'X');
+        res5=str.replace(/\\e/g,'e');
+        document.getElementById("c").innerHTML="String after replacing 'removed' or 'reed' or 'received' or 'refused' with 'X' : "+res4+"<br><br> String after replacing '\\e' with 'e' :"+res5;
+        }
+    </script>
+</body>
+</html>

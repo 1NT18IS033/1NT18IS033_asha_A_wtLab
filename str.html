@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String operations</title>
+</head>
+<body>
+    <div>
+        <p id="a">click the button</p>
+        
+        <button id="but">Here!!</button>
+        <p id="b"></p>
+        <script>
+            var x=document.getElementById("but");
+            x.addEventListener("keydown", func);
+            function func(){
+                var p=prompt("Enter the string"," ");
+                var sln=p.length;
+                var pos=p.indexOf("ash");
+                var pos1=p.lastIndexOf("a");
+                //var pos2=p.indexOf("u",5);
+                //var pos3=p.lastIndexOf("a",3);
+                var i=p.search("madguni");
+                var sli=p.slice(5,10);
+                var sub=p.substr(5,3);
+                var n=p.replace("Welcome","how are you");
+                var up=p.toUpperCase();
+                var low=p.toLowerCase();
+                var text1="hello"
+                var text3=p.concat(" ",text1);
+                var k=p.charAt(0);
+                var arrayy=p.split(" ");
+                if(p!=null)
+                {
+                    document.getElementById("b").innerHTML="String is: "+p+"<br> Length of the string: "+sln+"<br> Position of ash: "+pos+"<br> Position of last occurance of a: "+pos1+"<br> Madguni found in the index: "+i+"<br>  "
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
