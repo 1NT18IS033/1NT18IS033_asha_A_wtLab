@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Enter the number less than 10</p>
+    <input id="demo" type="text">
+    <button onclick="myfunc()">Try!!</button>
+    <p id="a"></p>
+    
+
+    <script>
+        function myfunc(){
+            var msg,x;
+            msg=document.getElementById("a");
+            msg.innerHTML=" ";
+            x=document.getElementById("demo").value;
+            try{
+                if(x=="") throw "empty";
+                if(isNaN(x)) throw "not a number";
+                if(x>10) throw "Number should be less than 10";
+                if(x>0 && x<10)
+                throw "correct!! the number is less than 10";
+
+            }
+            catch(err){
+                msg.innerHTML=err;
+            }
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick=display()></button>
+    <p id="a"></p>
+    <script>
+        function planet(name,color,distance,radius ,gravity)
+        {
+            this.name=name;
+            this.color = color;
+            this.distance = distance;
+            this.radius = radius;
+            this.gravity = gravity;
+            this.display=display;
+
+            }
+        
+        function display() {
+    var mercury = new planet("Red", "52.805 million km", " 2439.7 km", "3.7 m/s^2");
+    document.getElementById("mer").innerHTML =
+    " Mercury is " + mercury.color + " in colour . <br> The distance between mercury and sun is " + mercury.distance + " . <br> The radius of mercury is " + mercury.radius + " . <br> The gravity of mercury is " + mercury.gravity + "."; 
+    }
+    </script>
+</body>
+</html>

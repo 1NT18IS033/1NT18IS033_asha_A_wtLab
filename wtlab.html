@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <style>
+        body{
+            background-image:url(galaxy.jpg);
+        }
+        p{background-color: aqua; 
+         font-size: larger;
+         font-weight:bolder;}
+        
+         button{
+             
+             border-width: thick;
+             border-radius: 100px;
+             padding: 8px;
+             }
+             
+        h1{color: blanchedalmond;}
+    </style>
+    <script>
+        function planet(name,distance,gas){
+            this.name = name;
+            this.distance = distance;
+            this.gas=gas;
+
+            this.display = function(){
+                document.getElementById("dsp").innerHTML =  `Planet name is '${this.name}' and it's distance from sun is ${this.distance} million kms and gases presents are ${this.gas}`
+            }
+        }
+        function fun1(){
+            let nwPlanet = new planet("Mercury", "52.816","hydrogen,helium,oxygen..")
+            nwPlanet.display()
+            document.getElementById("disp1").innerHTML = ""
+        }
+       
+        function fun2(){
+            let nwPlanet2 = new planet("Venus", "107.78","Carbon dioxide")
+            nwPlanet2.display()
+            document.getElementById("disp1").innerHTML = ""
+        }
+        
+        function fun3(){
+            let nwPlanet2 = new planet("Earth", "151.06","nitrogen,oxygen,carbon dioxide")
+            nwPlanet2.display()
+            document.getElementById("disp1").innerHTML = ""
+        }
+
+        function fun4(){
+            let nwPlanet2 = new planet("Mars", "247.72"," carbon dioxide,ntrogen,oxygen..")
+            nwPlanet2.display()
+            document.getElementById("disp1").innerHTML = ""
+        }
+       
+
+        function fun5(){
+            let nwPlanet2 = new planet("Jupiter", "756.52","hydrogen,helium")
+            nwPlanet2.display()
+            document.getElementById("disp1").innerHTML = ""
+        }
+        
+        function fun6(){
+            let nwPlanet2 = new planet("Saturn", "934","hydrogen,ammonia,methane..")
+            nwPlanet2.display()
+            document.getElementById("disp1").innerHTML = ""
+        }
+        
+        function fun7(){
+            let nwPlanet2 = new planet("Uranus", "2871","hydrogen,helium")
+            nwPlanet2.display()
+            document.getElementById("disp1").innerHTML = ""
+        }
+        function fun8(){
+            let nwPlanet = new planet("Neptune", "4497","hydrogen,helium,methane,ethane and ethyne.")
+            nwPlanet.display()
+            document.getElementById("disp1").innerHTML = ""
+        }
+       
+       
+    </script>
+   
+</head>
+<body>
+    <h1 style="text-align: center;"><u>Solar System</u></h1>
+    <div style="margin-top: 50px; text-align: center;  ">
+        <button class="c1" onclick="fun1()" style="background-color: chartreuse;">Mercury</button><br><br>
+        <button class="c2" onclick="fun2()" style="background-color: coral;">Venus</button><br><br>
+        <button class="c3" onclick="fun3()" style="background-color: coral;">Earth</button><br><br>
+        <button class="c4" onclick="fun4()" style="background-color: darkturquoise;">Mars</button><br><br>
+        <button class="c5" onclick="fun5()" style="background-color:gold;">Jupiter</button><br><br>
+        <button class="c6" onclick="fun6()" style="background-color: hotpink;">Saturn</button><br><br>
+        <button class="c7" onclick="fun7()" style="background-color: olive;">Uranus</button><br><br>
+        <button class="c8" onclick="fun8()">Neptune</button>
+        <br><br>
+        <p id="dsp"></p>
+        <p id="disp1"></p>
+    </div>
+    
+</body>
+</html>

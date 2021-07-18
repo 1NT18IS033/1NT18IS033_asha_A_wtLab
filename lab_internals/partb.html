@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        /* body{
+            background: brown;
+        } */
+        .clock{
+            position:absolute;
+            top :20%;
+            left:50%;
+            transform:translateX(-50%)
+            translateY(-50%);
+            color : black;
+            font-size: 20px;
+            font-family: Orbitron;
+            
+
+        }
+    </style>
+   
+</head>
+
+<body>
+    <div id="MyClock" ></div>
+    <center><button id="b" onclick=showTime()>Click Me!!</button></center>
+    <p id="a" class="clock"></p>
+    <script>
+        function random(number)
+        {   
+            res = Math.floor(Math.random()*(number))
+            return res;
+        }
+        function showTime()
+        {
+            let date = new Date();
+            let h = date.getHours();
+            let m = date.getMinutes();
+            let s = date.getSeconds();
+            var ses = "AM";
+
+            if(h==0)
+            {
+                h=12;
+            }
+            if(h>12)
+            {
+                h=h-12;
+                ses = "PM";
+            }
+
+            h=(h<10)? "0"+h:h;
+            m=(m<10)? "0"+m:m;
+            s=(s<10)? "0"+s:s;
+
+            let time = h +" : "+m+" : "+s+" "+ses;
+
+            const x= random(5);
+            let bgcolor;
+            if(x==0)
+            {
+                bgcolor='Red';
+                document.body.style.backgroundColor=bgcolor;
+            }
+            if(x==1)
+            {
+                bgcolor='Green';
+                document.body.style.backgroundColor=bgcolor;
+            }
+            if(x==2)
+            {
+                bgcolor='Violet';
+                document.body.style.backgroundColor=bgcolor;
+            }
+            if(x==3)
+            {
+                bgcolor='Blue';
+                document.body.style.backgroundColor=bgcolor;
+            }
+            if(x==4)
+            {
+                bgcolor='Orange';
+                document.body.style.backgroundColor=bgcolor;
+            }
+
+            //x=document.body.style.backgroundColor.value;
+            document.getElementById("a").innerText = time + "\nBackground Color : "+bgcolor;
+        }
+    </script>
+</body>
+</html>
