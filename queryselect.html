@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            align-items: center;
+        }
+    </style>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueryselectorAll </title>
+</head>
+<body>
+    <center>
+    <h3 class="class1"> head with class="class1"</h3>
+    <p class="class1">Paragraph  with class="class1"</p>
+    <button onclick="myfunc()">Click</button></center>
+
+    <script>
+        function myfunc(){
+            var x,i;
+            x=document.querySelectorAll(".class1");
+            for(i=0;i<x.length;i++){
+                x[i].style.backgroundColor="green";
+            }
+        }
+    </script>
+    
+</body>
+</html>
