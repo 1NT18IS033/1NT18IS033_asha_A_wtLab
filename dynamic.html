@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Welcome!!</div>
+    <div>How are you??</div> <br>
+    <label>Try this button: </label><br>
+    <button id="myBtn" style="font-size: 30px;cursor: pointer;margin: 5px 20px;">Try Me!</button>
+    <script>
+        document.getElementById("myBtn").addEventListener("mouseover", addElem);
+        document.getElementById("myBtn").addEventListener("mouseout", addElem1);
+        document.getElementById("myBtn").addEventListener("click", addElem2);
+
+
+        
+        function addElem() {
+          let b = document.createElement("p");
+          document.body.append(b)
+          b.innerText = "Hello"
+          b.style.fontSize = "60px"
+          b.style.color = "green"
+          b.style.backgroundColor="pink"
+        }
+
+        function addElem1() {
+          let a = document.createElement("p");
+          document.body.append(a)
+          a.innerText = "welcome to WT lab"
+          a.style.fontSize = "50px"
+          a.style.color = "white"
+          a.style.fontStyle =" italic"
+          a.style.backgroundColor="black"
+        }
+
+        function addElem2() {
+          let c = document.createElement("p");
+          document.body.append(c)
+          c.innerText = "Clicked"
+          c.style.fontSize = "40px"
+          c.style.color = "red"
+        }
+    </script>
+</body>
+</html>
